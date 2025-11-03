@@ -1,0 +1,46 @@
+# 1. Crear carpeta del proyecto y abrir en VS Code
+mkdir proyecto_git_simple
+cd proyecto_git_simple
+code .
+
+# 2. Crear entorno virtual e instalar paquetes
+python -m venv venv
+# Activar entorno virtual:
+# En Windows:
+.\venv\Scripts\activate
+# En macOS/Linux:
+source venv/bin/activate
+
+# Instalar paquetes necesarios
+pip install requests
+
+# 3. Crear archivo de entrada
+# En VS Code: crear archivo llamado entry.py
+
+# 4. Inicializar Git
+git init
+echo venv/ > .gitignore
+git add .
+git commit -m "Primer commit: estructura inicial"
+
+# 5. Crear repositorio en GitHub (desde la web)
+# → github.com > + > New repository > sin README ni .gitignore
+
+# 6. Conectar repositorio local con GitHub
+git remote add origin https://github.com/tuusuario/proyecto_git_simple.git
+git branch -M main
+git push -u origin main
+
+# 7. Flujo de trabajo habitual
+# Editar archivos en VS Code
+# Guardar cambios en Git local
+git add .
+git commit -m "Descripción del cambio"
+# Enviar cambios a GitHub
+git push
+
+# 8. Para eliminar Git local (si es necesario)
+rm -rf .git  # En Windows: rmdir /s /q .git
+
+# 9. Para eliminar repositorio en GitHub
+# → github.com > repositorio > Settings > Danger Zone > Delete this repository

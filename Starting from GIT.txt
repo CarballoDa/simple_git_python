@@ -1,0 +1,35 @@
+# 1. Copiar la URL del repositorio
+# Ve a GitHub > abre el repositorio > haz clic en el botón verde "Code" > copia la URL HTTPS
+# Ejemplo: https://github.com/tuusuario/proyecto_git_simple.git
+
+# 2. Abrir terminal y clonar el repositorio
+git clone https://github.com/tuusuario/proyecto_git_simple.git
+
+# 3. Entrar en la carpeta del proyecto
+cd proyecto_git_simple
+
+# 4. Abrir el proyecto en Visual Studio Code
+code .
+
+# 5. (Opcional) Crear entorno virtual si el proyecto es Python
+python -m venv venv
+# Activar entorno virtual:
+# En Windows:
+.\venv\Scripts\activate
+# En macOS/Linux:
+source venv/bin/activate
+
+# 6. Instalar dependencias si hay archivo requirements.txt
+pip install -r requirements.txt
+
+# 7. Confirmar que Git está activo
+git status
+# Verás el estado del repositorio local y si hay cambios sin guardar
+
+# 8. Flujo de trabajo habitual
+# Editar archivos en VS Code
+# Guardar cambios en Git local
+git add .
+git commit -m "Cambios realizados"
+# Enviar cambios a GitHub
+git push
