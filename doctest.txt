@@ -1,0 +1,26 @@
+DOCTEST 
+- Permite escribir ejemplos de uso dentro del docstring de una función.
+- Esos ejemplos se ejecutan como pruebas: si el resultado no coincide, la prueba falla.
+- Así, tu documentación se convierte en documentación viva.
+
+Formato básico de un doctest
+
+Dentro del docstring, se escribe como si estuvieras en el intérprete de Python:
+>>> función(parametros)
+resultado_esperado
+
+
+Ejemplo conceptual:
+def suma(a, b):
+    """
+    Suma dos números.
+
+    >>> suma(2, 3)
+    5
+    """
+    return a + b
+
+
+Ejecutar doctest
+
+python -m doctest -v tu_script.py

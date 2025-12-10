@@ -23,7 +23,7 @@ pip freeze > requirements.txt
 git init
 echo venv/ > .gitignore
 git add .
-git commit -m "Primer commit: estructura inicial"
+git commit -m "Primer commit: estructura inicial" * el -m es paa permitir que la descripción contenga espacios
 
 # 5. Crear repositorio en GitHub (desde la web)
 # → github.com > + > New repository > sin README ni .gitignore
