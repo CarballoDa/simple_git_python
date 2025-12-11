@@ -66,3 +66,30 @@ del my_tuple
 tup = 1, 2, 3,
 my_list = list(tup)
 print(type(my_list)) # salida: <class 'list'>
+
+def sum_lists(list1, list2):
+    if len(list1) != len(list2):
+        return None
+    result = []
+    for a, b in zip(list1, list2):
+        result.append(a + b)
+    return result
+
+print(sum_lists([1, 2, 3], [4, 5, 6])) # salida: [5, 7, 9]
+
+def fibonacci(n):
+    a, b = 0, 1
+    for _ in range(n):
+        yield a
+        a, b = b, a + b
+        
+print(list(fibonacci(10))) # salida: [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
+
+def sum_lists_b(list1, list2):
+    if len(list1) != len(list2):
+        return None
+    result = []
+    for pair in zip(list1, list2):
+        result.append(pair[0] + pair[1])
+    return result
+
