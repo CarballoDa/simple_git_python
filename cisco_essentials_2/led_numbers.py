@@ -124,9 +124,6 @@ NUMBERS_TO_LED_BIG = {
     ]
 }
 
-def get_position_value(number:int, position:int):
-    return NUMBERS_TO_LED_BIG[number][position]
-
 def print_leds(number):
     number_lines = []
     if number < 0:
@@ -137,7 +134,7 @@ def print_leds(number):
     for row in range(height):
         content = []
         for num in digits:            
-            content.append(get_position_value(int(num), row))
+            content.append(NUMBERS_TO_LED_BIG[int(num)][row])
         print(" ".join(content))
         
 print_leds(9081726354)
