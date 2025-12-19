@@ -137,4 +137,10 @@ def print_leds(number):
             content.append(NUMBERS_TO_LED_BIG[int(num)][row])
         print(" ".join(content))
         
+        """ 
+        # Using comprehension in line
+        for row in range(height):
+            print(" ".join(NUMBERS_TO_LED_BIG[int(d)][row] for d in digits))
+        """
+        
 print_leds(9081726354)
