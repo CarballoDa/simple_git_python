@@ -2,7 +2,7 @@
 # Main functions
 # ===============
 
-def are_anagram(txt_a: str, txt_b: str) -> bool:
+def are_anagrams(txt_a: str, txt_b: str) -> bool:
     """Recibe dos textos y comprueba si son anagramas
 
     Args:
@@ -13,25 +13,18 @@ def are_anagram(txt_a: str, txt_b: str) -> bool:
         bool: True si son anagramas. False en caso contrario
         
     Examples:
-        >>> are_anagram("Ten", "Net")
+        >>> are_anagrams("Ten", "Net")
         True
-        >>> are_anagram("1221", "2121")
+        >>> are_anagrams("1221", "2121")
         True
-        >>> are_anagram("silent", "liston")
+        >>> are_anagrams("silent", "liston")
         False
-        >>> are_anagram("", "")
+        >>> are_anagrams("", "")
         False
     """
     if len(txt_a) == 0 and len(txt_b) == 0:
         return False
-    txt_a = txt_a.lower().replace(" ", "")
-    txt_b = txt_b.lower().replace(" ", "")
-    lta = list(txt_a)
-    ltb = list(txt_b)
-    lta.sort()
-    ltb.sort()
-    return lta == ltb
-
+    return sorted(txt_a.lower().replace(" ", "")) == sorted(txt_b.lower().replace(" ", "")) 
 
 # ====================================
 # Rapid, direct execution tests
@@ -46,7 +39,7 @@ def main():
         
         txt_b = input('Ingresa el segundo texto posible anagrama: ')
 
-        print(f"Los textos {txt_a} y {txt_b} son anagramas? -> {are_anagram(txt_a, txt_b)}")
+        print(f"Los textos {txt_a} y {txt_b} son anagramas? -> {are_anagrams(txt_a, txt_b)}")
         
     print('Ejecución cerrada con comando exit')
     
