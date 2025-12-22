@@ -1,6 +1,6 @@
-# ===============
+# ==================================
 # Modules and functions importations
-# ===============
+# ==================================
 
 
 from numbers_processor import sum_nums_v2 as sum_nums
