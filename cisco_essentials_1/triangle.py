@@ -15,15 +15,12 @@ def validate_sides(a: float, b: float, c: float) -> bool:
         bool: True if all sides are over zero. False otherwise.
         
     Examples:
-        Valid Cases:
         >>> validate_sides(1, 1, 1)
         True
         >>> validate_sides(2, 2, 3)
         True
         >>> validate_sides(3, 2.5, 2)
         True
-
-        Invalid Cases:
         >>> validate_sides(1, 1, 0)
         False
         >>> validate_sides(1, 0, 3)
@@ -46,15 +43,12 @@ def is_a_triangle(a: float, b: float, c: float) -> bool:
         bool: True if it is a triangle, False if it is not a triangle
     
     Examples:
-        Valid Cases:
         >>> is_a_triangle(1, 1, 1)
         True
         >>> is_a_triangle(2, 2, 3)
         True
         >>> is_a_triangle(3, 2.5, 2)
         True
-
-        Invalid Cases:
         >>> is_a_triangle(1, 1, 3)
         False
         >>> is_a_triangle(1, 2, 3)
@@ -79,15 +73,12 @@ def is_a_right_triangle(a: float, b: float, c: float) -> bool:
         bool: True if it is a triangle rectangle, False if it is not
     
     Examples:
-        Valid Cases:
         >>> is_a_right_triangle(2.5, 1.5, 2)
         True
         >>> is_a_right_triangle(10, 6, 8)
         True
         >>> is_a_right_triangle(5, 3, 4)
         True
-
-        Invalid Cases:
         >>> is_a_right_triangle(1, 1, 3)
         False
         >>> is_a_right_triangle(1, 2, 3)
@@ -118,15 +109,12 @@ def heron(a: float, b: float, c: float) -> float | bool:
         float | bool: Area if valid, False otherwise.
         
     Examples:
-        Valid Cases:
         >>> heron(3, 4, 5)
         6.0
         >>> heron(6, 4, 5)
         9.921567416492215
         >>> heron(5, 4, 4)
         7.806247497997997
-
-        Invalid Cases:
         >>> heron(1, 0, 0)
         False
         >>> heron(0, 2, 5.6)
@@ -152,15 +140,12 @@ def area_of_triangle(a: float, b: float, c: float) -> float | bool:
         float | bool: area or False otherwise
         
     Examples:
-        Valid Cases:
         >>> area_of_triangle(3, 4, 5)
         6.0
         >>> area_of_triangle(6, 4, 5)
         9.921567416492215
         >>> area_of_triangle(5, 4, 4)
         7.806247497997997
-
-        Invalid Cases:
         >>> area_of_triangle(1, 0, 3)
         False
         >>> area_of_triangle(1, 0, 0)

@@ -1,5 +1,6 @@
-"""Te voy a preparar una colección de ejercicios progresivos, diseñados específicamente para ti: claros, didácticos, y pensados para que puedas reutilizar los patrones en cualquier práctica del curso.
-Los organizo por patrones de iteración:
+"""
+Colección de ejercicios progresivos, claros, didácticos, y pensados para poder reutilizar los patrones en cualquier práctica o ejercicio.
+Organizados por patrones de iteración:
 - Iterar por pares
 - Ventanas deslizantes (sliding windows)
 - Bloques fijos
@@ -83,13 +84,12 @@ test_list = [1, 2, 3, 4, 5]
 for index in range(0, (len(test_list) - 3) + 1):
     print(sum(test_list[index:index + 3]))
 
-
 """
 5. Detectar si una cadena contiene tres vocales seguidas
 Ejemplo:
-"cooperación" → True  error en tu enunciado? donde estan aqui las tres vocales seguidas? esto devuevle False
+"cooperación" → True
 "murciélago" → False
-Añado tercera palabra "cauete" - True
+"cauete" → True
 """
 
 words = ["cooperación" ,"murciélago", "cauete"]
@@ -157,7 +157,6 @@ matrix_test = [
             [9,1,2,3],
             [4,5,6,7]
             ]
-new_matrix = []
 
 for x in (0,2):
     for y in (0,2):
@@ -165,7 +164,21 @@ for x in (0,2):
         for row_index in range(x, x + 2):
             new_matrix.append(matrix_test[row_index][y:y + 2])
         print(new_matrix) 
-               
+        
+"""
+Versión función control dinámico de dimensión
+"""
+
+def get_submatrix(matrix: list, block_size: int) -> list:
+    block_size = 2
+    for row_start in range(0, len(matrix), block_size):
+        for col_start in range(0, len(matrix[0]), block_size):
+            block = []
+            for r in range(row_start, row_start + block_size):
+                block.append(matrix[r][col_start:col_start + block_size])
+            break
+    return block
+            
 """
 9. Detectar si una matriz contiene un bloque 3x3 con todos los números iguales
 Ejemplo:
@@ -178,13 +191,30 @@ Ejemplo:
 → True"""
 
 matrix_test = [
-            [1,1,1,2],
-            [1,1,1,2],
-            [1,1,1,2],
-            [3,3,3,3]
-            ]
+    [1,1,1,2],
+    [1,1,1,2],
+    [1,1,1,2],
+    [3,3,3,3]
+]
 
+grid_size = 3
+rows = len(matrix_test)
+cols = len(matrix_test[0])
+found = False
 
+for row_start in range(rows - grid_size + 1):
+    for col_start in range(cols - grid_size + 1):
+        block = []
+        for r in range(row_start, row_start + grid_size):
+            block.extend(matrix_test[r][col_start:col_start + grid_size])
+        if len(set(block)) == 1:
+            found = True
+            break
+    if found:
+        break
+
+print(found)
+        
 # PEDNIENTE DESARROLO
 
 # ========================================================
